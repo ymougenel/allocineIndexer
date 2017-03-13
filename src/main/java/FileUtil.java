@@ -10,12 +10,11 @@ public class FileUtil {
 
 	/**
 	 * Write the result into a file
-	 * @param 
-	 * 		String result : the String to be written
+	 * @param result : the String to be written
 	 * 		String file : the file location
 	 * No exception thrown if file not found
 	 */
-	public static void writeFileResult(String result,String  file) {
+	public static void writeFileResult(String result, String  file) {
 		PrintWriter writer;
 		try {
 //			System.out.println("Writing result (into " + file +") : \n");
@@ -30,8 +29,7 @@ public class FileUtil {
 
 	/**
 	 * Read the file containing the list of films
-	 * @param 
-	 * 		String file : the file location
+	 * @param file : the file location
 	 * @return the list of films
 	 * No exception thrown if file not found
 	 */	
@@ -70,7 +68,8 @@ public class FileUtil {
 			out = out.substring(0,out.indexOf("["));
 		}
 		
-		// If contains "(...)", replaces the brackets with blanks (the content is unchanged). Example : Hangover (The)
+		// If contains "(...)", replaces the brackets with blanks (the content is unchanged).
+		// Example: Hangover (The) -> The Hangover
 		if (out.contains("(")) {
 			out = out.replace("(", "");
 			out = out.replace(")", "");
@@ -78,7 +77,4 @@ public class FileUtil {
 		return out.substring(0,out.length());
 	}
 	
-	public static void main(String[] aa) {
-		System.out.println("1->"+formatString("youth"));
-	}
 }
