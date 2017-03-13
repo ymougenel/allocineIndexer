@@ -7,6 +7,6 @@ public class ConnectionTest {
 
   @Test
   public void testConnection() {
-    assert(true);
+    assert(false);
   }
 }
