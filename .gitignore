@@ -1,4 +1,7 @@
 .idea
+mylamber.iml
+target/
+old
 .project
 .classpath
 .settings
