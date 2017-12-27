@@ -6,11 +6,10 @@ import java.util.Arrays;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-/**
- * Created by yann on 13/03/17.
- */
+
 public class ConnectionTest {
 
+  // TODO implement this test
   @Test
   public void testConnection() {
     assert(true);
