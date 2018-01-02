@@ -13,10 +13,12 @@ From a list of hundreds of movies, you can get the following information:
 ## 1/ Get the runnable jar
 ### The easiest way
  
- TODO: release a jar version.
+ Get the latest compiled JAR [here](https://github.com/ymougenel/allocineIndexer/raw/release/target/allocineExtracter-0.1.0.jar)
+
 ### The other way
  
  Download the project from [github](https://github.com/ymougenel/allocineIndexer/archive/master.zip)
+
  Compile the source code
 ```sh
 $ mvn compile
@@ -25,6 +27,7 @@ $ mvn compile
 ## 2/ Run the jar
 
 Copy the sourcefile source.txt next to the jar location.
+
 Run the jar
 ```sh
 $ java -jar allocineallocineExtracter.jar
@@ -44,7 +47,7 @@ While using the project, if you encounter any bug or frustration, feel free [to 
 
 If you want to contribute, please respect the following guideline:
 - Describe your MR, including the purpose and changes
-- Add tests your code, in order to maintain a stability
+- Ensure your code is tested, in order to maintain a stability
 
 # License
 
