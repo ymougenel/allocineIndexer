@@ -1,6 +1,9 @@
 import org.junit.Test;
+import util.ArgumentsUtil;
 
 import static org.junit.Assert.assertEquals;
+import static util.ArgumentsUtil.resultFile;
+import static util.ArgumentsUtil.sourceFile;
 
 
 public class ArgumentsParsingTest {
@@ -8,20 +11,20 @@ public class ArgumentsParsingTest {
 
     @Test
     public void testDefaultValues() {
-        assertEquals("source.txt", AllocineExtraction.sourceFile);
-        assertEquals("result.txt", AllocineExtraction.resultFile);
+        assertEquals("source.txt", sourceFile);
+        assertEquals("result.txt", resultFile);
     }
 
     @Test
     public void testFilesArgument() {
         String[] testArgs = { "-s", "sourcePath.txt", "-r", "resultPath.txt"};
-        AllocineExtraction.parseArgs(testArgs);
-        assertEquals("sourcePath.txt", AllocineExtraction.sourceFile);
-        assertEquals("resultPath.txt", AllocineExtraction.resultFile);
+        ArgumentsUtil.parseArgs(testArgs);
+        assertEquals("sourcePath.txt", sourceFile);
+        assertEquals("resultPath.txt", resultFile);
 
         String[] newTestArgs = { "--source", "newSourcePath.txt", "--result", "newResultPath.txt"};
-        AllocineExtraction.parseArgs(newTestArgs);
-        assertEquals("newSourcePath.txt", AllocineExtraction.sourceFile);
-        assertEquals("newResultPath.txt", AllocineExtraction.resultFile);
+        ArgumentsUtil.parseArgs(newTestArgs);
+        assertEquals("newSourcePath.txt", sourceFile);
+        assertEquals("newResultPath.txt", resultFile);
     }
 }
