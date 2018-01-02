@@ -1,7 +1,12 @@
 import java.io.IOException;
+
+import model.Film;
 import org.apache.commons.cli.*;
+import output.ResultLayoutEdition;
+import util.FileUtil;
+import web.WebConnection;
+
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**

@@ -1,3 +1,6 @@
+package web;
+
+import model.Film;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -5,8 +8,7 @@ import org.jsoup.select.Elements;
 
 
 public class PageParsing {
-	public static String valueClassGrade = "acLnk 1F4446484E1F44464245434446484E1E2A2B242422211F42C146CB46CAC343C21FC0C143C2C2431F";
-	
+
 	/**
 	 * Gets the first link from the Html research page
 	 * @param codeHtml
@@ -38,12 +40,12 @@ public class PageParsing {
 	}
 	
 	/**
-	 * Creates the Film out of the Html page containing all the information (dates, types, grades ...)
+	 * Creates the model.Film out of the Html page containing all the information (dates, types, grades ...)
 	 * @param filmName : title added so the movie return is complete
 	 * @param codeHtml
-	 * @return the Film created
+	 * @return the model.Film created
 	 */
-	public static Film getFilm(String filmName,String codeHtml) {
+	public static Film getFilm(String filmName, String codeHtml) {
 		Film film = new Film();
 		Document doc;
 		film.name = filmName.replace("+", " ");

@@ -1,7 +1,22 @@
+package output;
+
+import model.Film;
+import util.FileUtil;
+
 import java.util.List;
 
-
+/**
+ * Write the result list into a file
+ *
+ * TODO: Handle i18n (issue #7)
+ */
 public class ResultLayoutEdition {
+
+	/**
+	 *
+	 * @param films
+	 * @param fileLocation the file paht
+	 */
 	public static void editFilms(List<Film> films, String fileLocation) {
 		String name;
 		int count = 0;

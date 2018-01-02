@@ -1,4 +1,6 @@
+import model.Film;
 import org.junit.Test;
+import web.WebConnection;
 
 import java.io.IOException;
 import java.util.Arrays;

@@ -1,19 +1,21 @@
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+package web;
 
+import java.io.IOException;
+
+import model.Film;
 import org.apache.commons.io.IOUtils;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.BasicCookieStore;
 import org.apache.http.impl.client.HttpClientBuilder;
+import web.PageParsing;
 
 public class WebConnection {
 
-	public static String pageURL="http://www.allocine.fr";
+	public static final String PAGE_URL ="http://www.allocine.fr";
 
-	public static String getPage(String page) throws IllegalStateException, ClientProtocolException, IOException {
+	public static String getPage(String page) throws IllegalStateException, IOException {
 
 		System.out.println("Getting page "+page+"!!!");
 		BasicCookieStore cookieStore = new BasicCookieStore();
@@ -27,7 +29,7 @@ public class WebConnection {
 		String resURL;
 		String htmlResult = getPage(pageURL+"/recherche/?q="+movieTitle); // Html research page
 		resURL = PageParsing.getResearchFirstResult(htmlResult); // Getting the first link
-		htmlResult = getPage(pageURL+resURL); // Html from the first link (ie : movie desciption page)
+		htmlResult = getPage(pageURL+resURL); // Html from the first link (ie : movie description page)
 		return PageParsing.getFilm(movieTitle,htmlResult);
 	}
 
