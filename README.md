@@ -19,7 +19,7 @@ From a list of hundreds of movies, you can get the following information:
  Download the project from [github](https://github.com/ymougenel/allocineIndexer/archive/master.zip)
  Compile the source code
 ```sh
-$ mvn compile
+$ mvn clean compile package 
 ```
 
 ## 2/ Run the jar
