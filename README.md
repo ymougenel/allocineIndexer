@@ -13,7 +13,7 @@ From a list of hundreds of movies, you can get the following information:
 ## 1/ Get the runnable jar
 ### The easiest way
  
- Get the latest compiled JAR [here](https://github.com/ymougenel/allocineIndexer/raw/release/target/allocineExtracter-0.1.0.jar)
+ Get the latest compiled JAR [here](https://github.com/ymougenel/allocineIndexer/raw/release/allocineExtracter.jar)
 
 ### The other way
  
