@@ -61,7 +61,7 @@ public class ArgumentsUtil {
             if (commandLine.hasOption("r")) {
                 ArgumentsUtil.resultFile = commandLine.getOptionValue("r");
             }
-            // If proxy set
+            // If proxy set (host and port)
             if (commandLine.hasOption("h") && commandLine.hasOption("p")) {
                 try {
                     WebConnection.proxy = new HttpHost(commandLine.getOptionValue("h"),Integer.parseInt(commandLine.getOptionValue("p")));

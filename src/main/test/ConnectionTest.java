@@ -29,9 +29,13 @@ public class ConnectionTest {
         }
     }
 
-    // TODO implement this test
     @Test
     public void testConnection() {
+        try {
+            WebConnection.getPage(WebConnection.PAGE_URL);
+        } catch (IOException e) {
+            assert (false);
+        }
 
         assert (true);
     }
