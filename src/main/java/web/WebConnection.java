@@ -27,9 +27,9 @@ public class WebConnection {
 
 	public static Film extractMovie(String movieTitle) throws IOException {
 		String resURL;
-		String htmlResult = getPage(pageURL+"/recherche/?q="+movieTitle); // Html research page
+		String htmlResult = getPage(PAGE_URL+"/recherche/?q="+movieTitle); // Html research page
 		resURL = PageParsing.getResearchFirstResult(htmlResult); // Getting the first link
-		htmlResult = getPage(pageURL+resURL); // Html from the first link (ie : movie description page)
+		htmlResult = getPage(PAGE_URL+resURL); // Html from the first link (ie : movie description page)
 		return PageParsing.getFilm(movieTitle,htmlResult);
 	}
 
