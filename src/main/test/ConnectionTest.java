@@ -1,4 +1,6 @@
+import model.Film;
 import org.junit.Test;
+import web.WebConnection;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -6,11 +8,10 @@ import java.util.Arrays;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-/**
- * Created by yann on 13/03/17.
- */
+
 public class ConnectionTest {
 
+  // TODO implement this test
   @Test
   public void testConnection() {
     assert(true);

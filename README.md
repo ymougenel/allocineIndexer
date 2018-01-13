@@ -21,7 +21,7 @@ From a list of hundreds of movies, you can get the following information:
 
  Compile the source code
 ```sh
-$ mvn compile
+$ mvn clean compile package 
 ```
 
 ## 2/ Run the jar

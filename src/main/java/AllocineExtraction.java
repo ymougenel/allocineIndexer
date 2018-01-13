@@ -1,4 +1,11 @@
 import java.io.IOException;
+
+import model.Film;
+import org.apache.commons.cli.*;
+import output.ResultLayoutEdition;
+import util.FileUtil;
+import web.WebConnection;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,13 +14,15 @@ import java.util.List;
  */
 public class AllocineExtraction {
 
+  public static String sourceFile = "source.txt";
+  public static String resultFile = "result.txt";
+
   public static void main(String[] args) {
-    List<String> titles = FileUtil.readFromFile("source.txt");
+    parseArgs(args);
+
+    List<String> titles = FileUtil.readFromFile(sourceFile);
     List<Film> films = new ArrayList<Film>();
 
-    //titles = titles.subList(0, 14);
-    String resURL;
-    String htmlResult;
     for (String title : titles) {
       try {
         films.add(WebConnection.extractMovie(title));
@@ -23,7 +32,45 @@ public class AllocineExtraction {
         System.err.println(e.getMessage());
       }
     }
-    ResultLayoutEdition.editFilms(films, "Resultats.txt"); // Edition of the results and writing into file
-    //System.out.println(films.toString());
+    ResultLayoutEdition.editFilms(films, resultFile); // Edition of the results and writing into file
+  }
+
+
+  /**
+   * parse the commandLine arguments
+   * @param args
+   */
+  public static void parseArgs(String[] args) {
+    CommandLineParser parser = new DefaultParser();
+    Option option_source = Option.builder("s")
+            .required(false)
+            .hasArg()
+            .desc("The source file")
+            .longOpt("source")
+            .build();
+
+    Option option_result = Option.builder("r")
+            .required(false)
+            .hasArg()
+            .desc("The result file")
+            .longOpt("result")
+            .build();
+
+    Options options = new Options();
+    options.addOption(option_source);
+    options.addOption(option_result);
+    try {
+      CommandLine commandLine = parser.parse(options, args);
+
+      if (commandLine.hasOption("s")) {
+        sourceFile = commandLine.getOptionValue("s");
+      }
+      if (commandLine.hasOption("r")) {
+        resultFile = commandLine.getOptionValue("r");
+      }
+
+    } catch (ParseException e) {
+        System.err.println("Error while parsing the arguments: "+ args + "\n" + e.getMessage());
+    }
   }
 }
