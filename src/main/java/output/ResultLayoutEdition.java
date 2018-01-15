@@ -15,7 +15,7 @@ public class ResultLayoutEdition {
 	/**
 	 *
 	 * @param films
-	 * @param fileLocation the file paht
+	 * @param fileLocation the file path
 	 */
 	public static void editFilms(List<Film> films, String fileLocation) {
 		String name;
